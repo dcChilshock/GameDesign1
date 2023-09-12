@@ -23,7 +23,8 @@ func _on_calculatebtn_pressed():
 
 
 func _on_clearbtn_pressed():
-	pass # Replace with function body.
+	$Bigmanoutput.text=""
+	$Kilowatts.text=""
 
 
 func _on_exitbtn_pressed():

@@ -44,10 +44,10 @@ offset_bottom = 269.0
 
 [node name="kilowattlbl" type="Label" parent="."]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 67.0
-offset_right = 125.0
-offset_bottom = 96.0
+offset_left = 37.0
+offset_top = 71.0
+offset_right = 127.0
+offset_bottom = 100.0
 text = "Kilowatts:"
 
 [node name="Kilowatts" type="LineEdit" parent="."]
