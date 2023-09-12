@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://cffgb108jg13l"]
+
+[ext_resource type="Script" path="res://prog_82a.gd" id="1_dfw02"]
+
+[node name="Prog_82a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 12.0
+offset_right = 7.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dfw02")
+
+[node name="Clearbtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 176.0
+offset_right = 285.0
+offset_bottom = 216.0
+text = "Clear"
+
+[node name="Calculatebtn" type="Button" parent="."]
+modulate = Color(0.670588, 0.941176, 0.901961, 1)
+layout_mode = 0
+offset_left = 25.0
+offset_top = 175.0
+offset_right = 149.0
+offset_bottom = 215.0
+text = "Calculate"
+
+[node name="Exitbtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 227.0
+offset_right = 210.0
+offset_bottom = 267.0
+text = "Exit"
+
+[node name="Speedlimit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 75.0
+offset_right = 184.0
+offset_bottom = 101.0
+text = "Enter the speed limit:"
+
+[node name="Vehicle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 122.0
+offset_right = 210.0
+offset_bottom = 148.0
+text = "Enter the Vehicle Speed:"
+
+[node name="Output" type="Label" parent="."]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 82.0
+offset_right = 547.0
+offset_bottom = 167.0
+
+[node name="SpeedEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 71.0
+offset_right = 265.063
+offset_bottom = 102.0
+
+[node name="VehicleEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 118.0
+offset_right = 285.063
+offset_bottom = 149.0
+
+[connection signal="pressed" from="Clearbtn" to="." method="_on_clearbtn_pressed"]
+[connection signal="pressed" from="Calculatebtn" to="." method="_on_calculatebtn_pressed"]
+[connection signal="pressed" from="Exitbtn" to="." method="_on_exitbtn_pressed"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmo37row88ogu"]
+
+[ext_resource type="Script" path="res://my_name.gd" id="1_mfwev"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sn41o"]
+font_size = 25
+
+[node name="MyName" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mfwev")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 178.0
+offset_right = 435.0
+offset_bottom = 213.0
+label_settings = SubResource("LabelSettings_sn41o")
+
+[node name="Clearbtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 301.0
+offset_right = 447.0
+offset_bottom = 353.0
+text = "Clear"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 233.0
+offset_right = 447.0
+offset_bottom = 285.0
+text = "click here"
+
+[connection signal="pressed" from="Clearbtn" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_btn_clear_pressed"]

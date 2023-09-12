@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ds77k4aj3gj3s"]
+
+[node name="Prog_54b" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 182.0
+offset_right = 395.0
+offset_bottom = 222.0
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 182.0
+offset_right = 395.0
+offset_bottom = 222.0
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 270.0
+offset_right = 348.0
+offset_bottom = 310.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 75.0
+offset_right = 173.0
+offset_bottom = 98.0
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 221.0
+offset_right = 151.063
+offset_bottom = 252.0

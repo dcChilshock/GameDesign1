@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciw55nuacq5lb"]
+
+[ext_resource type="Script" path="res://prog_54c.gd" id="1_cegxj"]
+
+[node name="Prog_54c" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cegxj")
+
+[node name="Radius" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 17.0
+offset_right = 77.0
+offset_bottom = 43.0
+text = "Radius: "
+
+[node name="Thicktextman" type="Label" parent="."]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 97.0
+offset_right = 480.0
+offset_bottom = 291.0
+
+[node name="Calculate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 167.0
+offset_right = 107.0
+offset_bottom = 198.0
+text = "Calculate"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 249.0
+offset_right = 107.0
+offset_bottom = 280.0
+
+[node name="Poofbtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 121.0
+offset_right = 105.0
+offset_bottom = 152.0
+text = "Clear"
+
+[node name="Skiddadlebtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 208.0
+offset_right = 107.0
+offset_bottom = 239.0
+text = "Exit"
+
+[node name="Radiusedit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 16.0
+offset_right = 193.0
+offset_bottom = 62.0
+
+[connection signal="pressed" from="Calculate" to="." method="_on_calculate_pressed"]
+[connection signal="pressed" from="Poofbtn" to="." method="_on_poofbtn_pressed"]
+[connection signal="pressed" from="Skiddadlebtn" to="." method="_on_skiddadlebtn_pressed"]

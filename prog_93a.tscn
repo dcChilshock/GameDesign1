@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5eslbong5kuh"]
+
+[ext_resource type="Script" path="res://prog_93a.gd" id="1_ek3hq"]
+
+[node name="Prog_93a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ek3hq")
+
+[node name="Calculatebtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 197.0
+offset_right = 104.0
+offset_bottom = 228.0
+text = "Calculate"
+
+[node name="Clearbtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 159.0
+offset_right = 97.0
+offset_bottom = 190.0
+text = "Clear"
+
+[node name="Exitbtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 236.0
+offset_right = 102.0
+offset_bottom = 267.0
+text = "Exit"
+
+[node name="Bigmanoutput" type="Label" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 164.0
+offset_right = 260.0
+offset_bottom = 269.0
+
+[node name="kilowattlbl" type="Label" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 67.0
+offset_right = 125.0
+offset_bottom = 96.0
+text = "Kilowatts:"
+
+[node name="Kilowatts" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 68.0
+offset_right = 202.063
+offset_bottom = 99.0
+
+[connection signal="pressed" from="Calculatebtn" to="." method="_on_calculatebtn_pressed"]
+[connection signal="pressed" from="Clearbtn" to="." method="_on_clearbtn_pressed"]
+[connection signal="pressed" from="Exitbtn" to="." method="_on_exitbtn_pressed"]

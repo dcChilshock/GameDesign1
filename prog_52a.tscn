@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1gi3sfmw7oih"]
+
+[ext_resource type="Script" path="res://Prog52A.gd" id="1_hgmec"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nc7wp"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_q3ctj"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_qrh2o"]
+font_size = 26
+
+[node name="Prog52A" type="Control"]
+layout_mode = 3
+anchor_right = 0.807
+anchor_bottom = 0.711
+offset_left = -3.0
+offset_top = 3.0
+offset_right = -1.66406
+offset_bottom = 5.27197
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hgmec")
+
+[node name="Length" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.003
+offset_left = 270.0
+offset_top = 20.0
+offset_right = 373.0
+offset_bottom = 58.056
+text = "Length:"
+label_settings = SubResource("LabelSettings_nc7wp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Width" type="Label" parent="."]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 17.0
+offset_right = 560.0
+offset_bottom = 56.0
+text = "Width:"
+label_settings = SubResource("LabelSettings_q3ctj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bigboytextbox" type="Label" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 124.0
+offset_right = 623.0
+offset_bottom = 302.0
+label_settings = SubResource("LabelSettings_qrh2o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Calculatebtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 330.0
+offset_right = 317.0
+offset_bottom = 379.0
+text = "Calculate"
+
+[node name="BeGonebtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 333.0
+offset_right = 607.0
+offset_bottom = 382.0
+text = "Clear"
+
+[node name="Skiddadlebtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 329.0
+offset_right = 455.0
+offset_bottom = 378.0
+text = "Exit"
+
+[node name="WidthEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 66.0
+offset_right = 398.0
+offset_bottom = 112.0
+
+[node name="LengthEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 63.0
+offset_right = 594.0
+offset_bottom = 112.0
+
+[connection signal="pressed" from="Calculatebtn" to="." method="_on_calculatebtn_pressed"]
+[connection signal="pressed" from="BeGonebtn" to="." method="_on_be_gonebtn_pressed"]
+[connection signal="pressed" from="Skiddadlebtn" to="." method="_on_skiddadlebtn_pressed"]
