@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2p011lrcraw6"]
+
+[ext_resource type="Script" path="res://Prog_88a.gd" id="1_x4vle"]
+
+[node name="Prog_88a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x4vle")
+
+[node name="Enter#1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 49.0
+offset_right = 143.0
+offset_bottom = 75.0
+text = "Enter # 1:"
+
+[node name="Enter#2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 101.0
+offset_right = 142.0
+offset_bottom = 127.0
+text = "Enter # 2:"
+
+[node name="Bigmanlabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 43.0
+offset_right = 680.0
+offset_bottom = 240.0
+
+[node name="Edit1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 46.0
+offset_right = 317.0
+offset_bottom = 86.0
+
+[node name="Edit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 94.0
+offset_right = 321.0
+offset_bottom = 134.0
+
+[node name="LineEdit3" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 315.0
+offset_right = 206.0
+offset_bottom = 355.0
+
+[node name="Calculate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 250.0
+offset_right = 120.0
+offset_bottom = 282.0
+text = "Calculate"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 247.0
+offset_right = 269.0
+offset_bottom = 278.0
+text = "Clear"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 189.0
+offset_right = 155.0
+offset_bottom = 221.0
+text = "Exit"
+
+[connection signal="pressed" from="Calculate" to="." method="_on_calculate_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
