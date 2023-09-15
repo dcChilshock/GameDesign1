@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=3 uid="uid://dol1ohkreg1hy"]
+
+[ext_resource type="Script" path="res://prog_54a.gd" id="1_6aiap"]
+
+[node name="Prog_54a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6aiap")
+
+[node name="Calculate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 134.0
+offset_right = 132.0
+offset_bottom = 162.0
+text = "Calculate"
+
+[node name="clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 175.0
+offset_right = 120.0
+offset_bottom = 196.0
+text = "Clear "
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 211.0
+offset_right = 123.0
+offset_bottom = 236.0
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 125.0
+offset_bottom = 45.0
+text = "vehicle name:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 80.0
+offset_right = 241.0
+offset_bottom = 106.0
+text = "Gallons:"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 34.0
+offset_right = 290.0
+offset_bottom = 60.0
+text = "Miles:"
+
+[node name="main" type="Label" parent="."]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 135.0
+offset_right = 494.0
+offset_bottom = 281.0
+
+[node name="Vehiclename" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 17.0
+offset_right = 207.063
+offset_bottom = 48.0
+
+[node name="miles" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 32.0
+offset_right = 358.063
+offset_bottom = 63.0
+
+[node name="gallons" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 78.0
+offset_right = 313.063
+offset_bottom = 109.0
+
+[connection signal="pressed" from="Calculate" to="." method="_on_calculate_pressed"]
+[connection signal="pressed" from="clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

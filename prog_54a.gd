@@ -12,10 +12,10 @@ func _process(delta):
 
 
 func _on_clear_pressed():
-	$LineEdit.text=""
-	$LineEdit2.text=""
-	$LineEdit3.text=""
-	$Label4.text=""
+	$main.text=""
+	$Vehiclename.text=""
+	$miles.text=""
+	$gallons.text=""
 
 
 func _on_exit_pressed():
@@ -23,10 +23,9 @@ func _on_exit_pressed():
 
 
 func _on_calculate_pressed():
-	var A = int($LineEdit.text)
-	var aa= int($aa.text)
-	var b= int($B2.text)
-	var bb= int($Bb.text)
-	var c= int($Cc.text)
-	var ca= int($ccc.text)
-	var Root= 
+	var name = str($Vehiclename.text)
+	var miles = int($miles.text)
+	var gallons = int($gallons.text)
+	var mpg = miles / gallons
+	$main.text="name of the car is: " + str(name) +"\nMiles="+str(miles)+"\nGallons="+str(gallons)+"\nMiles per gallon="+str(mpg)
+	

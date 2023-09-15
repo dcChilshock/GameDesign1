@@ -73,35 +73,35 @@ offset_top = 24.0
 offset_right = 144.063
 offset_bottom = 55.0
 
-[node name="B+" type="LineEdit" parent="."]
+[node name="B2" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 79.0
 offset_top = 64.0
 offset_right = 146.063
 offset_bottom = 95.0
 
-[node name="B-" type="LineEdit" parent="."]
+[node name="Bb" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 364.0
 offset_top = 65.0
 offset_right = 431.063
 offset_bottom = 96.0
 
-[node name="A-" type="LineEdit" parent="."]
+[node name="aa" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 363.0
 offset_top = 21.0
 offset_right = 430.063
 offset_bottom = 52.0
 
-[node name="c-" type="LineEdit" parent="."]
+[node name="ccc" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 364.0
 offset_top = 114.0
 offset_right = 431.063
 offset_bottom = 145.0
 
-[node name="C+" type="LineEdit" parent="."]
+[node name="Cc" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 80.0
 offset_top = 104.0
