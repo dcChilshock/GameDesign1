@@ -1,0 +1,107 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3vd6n0ixewmx"]
+
+[ext_resource type="Script" path="res://lp4-2.gd" id="1_ndljh"]
+
+[node name="lp4-2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ndljh")
+
+[node name="weight" type="Label" parent="."]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 125.0
+offset_right = 182.0
+offset_bottom = 151.0
+text = "Weight="
+
+[node name="length" type="Label" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 16.0
+offset_right = 171.0
+offset_bottom = 42.0
+text = "length in cm ="
+
+[node name="hight" type="Label" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 54.0
+offset_right = 166.0
+offset_bottom = 80.0
+text = "height in cm ="
+
+[node name="width" type="Label" parent="."]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 23.0
+offset_right = 387.0
+offset_bottom = 49.0
+text = "width in cm="
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 112.0
+offset_right = 503.0
+offset_bottom = 345.0
+
+[node name="Calculate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 210.0
+offset_right = 133.0
+offset_bottom = 247.0
+text = "Calculate"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 306.0
+offset_right = 134.0
+offset_bottom = 343.0
+text = "exit"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 256.0
+offset_right = 132.0
+offset_bottom = 293.0
+text = "Clear"
+
+[node name="weightedit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 123.0
+offset_right = 260.063
+offset_bottom = 154.0
+
+[node name="lengthedit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 11.0
+offset_right = 241.063
+offset_bottom = 42.0
+
+[node name="heightedit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 50.0
+offset_right = 245.063
+offset_bottom = 81.0
+
+[node name="widthedit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 17.0
+offset_right = 459.063
+offset_bottom = 48.0
+
+[connection signal="pressed" from="Calculate" to="." method="_on_calculate_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_clear_pressed"]
