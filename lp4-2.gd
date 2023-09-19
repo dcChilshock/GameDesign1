@@ -29,10 +29,12 @@ func _on_calculate_pressed():
 	var length = int($lengthedit.text)
 	var width = int($widthedit.text)
 	var size = height * length * width
-	if size < 100000 and weight < 27:
+	if size <= 100000 and weight <= 27:
 		$Label3.text="Your package is within parameters"
 	elif size > 100000 and weight > 27:
 		$Label3.text="too heavy and too big"
-	elif size < 100000 and weight > 27:
+	elif size <= 100000 and weight > 27:
 		$Label3.text="Too heavy" 
-	
+	elif size > 100000 and weight <=27:
+		$Label3.text="Too big"
+	return

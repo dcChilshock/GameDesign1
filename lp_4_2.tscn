@@ -45,10 +45,10 @@ text = "width in cm="
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 185.0
-offset_top = 112.0
-offset_right = 503.0
-offset_bottom = 345.0
+offset_left = 288.0
+offset_top = 92.0
+offset_right = 606.0
+offset_bottom = 325.0
 
 [node name="Calculate" type="Button" parent="."]
 layout_mode = 0

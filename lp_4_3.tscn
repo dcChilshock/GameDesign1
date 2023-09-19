@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5ohiun8s4ek8"]
+
+[ext_resource type="Script" path="res://lp_4_3.gd" id="1_o0wgs"]
+
+[node name="lp_4_3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o0wgs")
+
+[node name="calculate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 120.0
+offset_right = 142.0
+offset_bottom = 159.0
+text = "calculate"
+
+[node name="clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 167.0
+offset_right = 137.0
+offset_bottom = 199.0
+text = "Clear"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 210.0
+offset_right = 128.0
+offset_bottom = 241.0
+text = "exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 234.0
+offset_right = 379.0
+offset_bottom = 300.0
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 110.0
+offset_right = 437.0
+offset_bottom = 233.0
+
+[node name="dozensofeggs" type="Label" parent="."]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 30.0
+offset_right = 509.0
+offset_bottom = 58.0
+text = "How many eggs do you want to buy."
+
+[node name="egg" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 59.0
+offset_right = 342.063
+offset_bottom = 90.0
+
+[connection signal="pressed" from="calculate" to="." method="_on_calculate_pressed"]
+[connection signal="pressed" from="clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
