@@ -23,10 +23,12 @@ func _on_exit_pressed():
 
 
 func _on_calculate_pressed():
-	var A = int($LineEdit.text)
+	var a = int($LineEdit.text)
 	var aa= int($aa.text)
 	var b= int($B2.text)
 	var bb= int($Bb.text)
 	var c= int($Cc.text)
-	var ca= int($ccc.text)
-	var Root= 
+	var cc= int($ccc.text)
+	var x = 1
+	var Quadequation = a * (x * x) + (b * x) + cc
+	

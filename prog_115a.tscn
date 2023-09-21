@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://ceufuacj2s0a3"]
+[gd_scene load_steps=2 format=3 uid="uid://ceufuacj2s0a3"]
+
+[ext_resource type="Script" path="res://prog_115a.gd" id="1_hosh5"]
 
 [node name="Prog_115a" type="Control"]
 layout_mode = 3
@@ -7,17 +9,39 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hosh5")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 296.0
-offset_top = 86.0
-offset_right = 453.0
-offset_bottom = 188.0
-
-[node name="Button" type="Button" parent="."]
+[node name="Calculate" type="Button" parent="."]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 139.0
 offset_right = 199.0
 offset_bottom = 181.0
+text = "Calculate"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 243.0
+offset_right = 199.0
+offset_bottom = 285.0
+text = "exit"
+
+[node name="clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 190.0
+offset_right = 196.0
+offset_bottom = 232.0
+text = "clear"
+
+[node name="item" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 26.0
+offset_right = 664.0
+offset_bottom = 328.0
+
+[connection signal="pressed" from="Calculate" to="." method="_on_calculate_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="clear" to="." method="_on_clear_pressed"]

@@ -12,12 +12,19 @@ func _process(delta):
 
 
 func _on_exit_pressed():
-	pass # Replace with function body.
+	get_tree().quit()
 
 
 func _on_clear_pressed():
-	pass # Replace with function body.
+	$item.clear()
 
 
 func _on_calculate_pressed():
-	pass # Replace with function body.
+	$item.add_item("Number")
+	#loop through all even numbers from 2 - 36
+	# range(start, stop) or
+	# rnage(start, stop, step)
+	for num in range(2, 36+1, 2):
+		var line = "%d" % num
+		$item.add_item(line)
+		
