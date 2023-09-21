@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp3fjtos32w76"]
+
+[ext_resource type="Script" path="res://random_numbers.gd" id="1_mmcen"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cat3v"]
+line_spacing = 5.0
+
+[node name="RandomNumbers" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mmcen")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 104.0
+offset_right = 482.0
+offset_bottom = 279.0
+label_settings = SubResource("LabelSettings_cat3v")
+
+[node name="calculate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 123.0
+offset_right = 140.0
+offset_bottom = 154.0
+text = "Calculate"
+
+[node name="clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 188.0
+offset_right = 177.0
+offset_bottom = 220.0
+text = "clear"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 249.0
+offset_right = 181.0
+offset_bottom = 281.0
+text = "exit"
+
+[connection signal="pressed" from="calculate" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
