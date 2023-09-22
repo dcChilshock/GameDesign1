@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://prog_115a.gd" id="1_hosh5"]
 
-[node name="Prog_115a" type="Control"]
+[node name="Prog_122b" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
