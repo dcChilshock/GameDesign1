@@ -15,7 +15,10 @@ func _process(delta):
 
 
 func _on_calculate_pressed():
-	$ItemList.
+	$ItemList.add_item(\"Output\")
+	for num in range(2, 10+1, 2):
+		var line = \"%d   %d   %d   %d\" % [num, num + 1, num * 2, num * num ]
+		$ItemList.add_item(line)
 "
 
 [node name="122c" type="Control"]
