@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://87s6i2gnx652"]
+
+[node name="122D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Calculate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 60.0
+offset_right = 188.0
+offset_bottom = 108.0
+text = "Calculate"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 114.0
+offset_right = 191.0
+offset_bottom = 162.0
+text = "Clear"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 173.0
+offset_right = 188.0
+offset_bottom = 221.0
+text = "Exit"

@@ -19,8 +19,8 @@ func _on_calculate_pressed():
 
 
 func _on_clear_pressed():
-	pass # Replace with function body.
+	$ItemList.clear()
 
 
 func _on_exit_pressed():
-	pass # Replace with function body.
+	get_tree().exit()

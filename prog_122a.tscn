@@ -43,3 +43,5 @@ offset_right = 525.0
 offset_bottom = 280.0
 
 [connection signal="pressed" from="calculate" to="." method="_on_calculate_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="clear" to="." method="_on_clear_pressed"]
