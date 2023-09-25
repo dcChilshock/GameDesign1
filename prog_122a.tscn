@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://2j8hlplwtipr"]
+
+[ext_resource type="Script" path="res://Prog_122a.gd" id="1_x6flq"]
+
+[node name="Prog_122a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6flq")
+
+[node name="calculate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 62.0
+offset_right = 142.0
+offset_bottom = 103.0
+text = "calculate"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 176.0
+offset_right = 144.0
+offset_bottom = 217.0
+text = "exit"
+
+[node name="clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 125.0
+offset_right = 154.0
+offset_bottom = 166.0
+text = "clear"
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 12.0
+offset_right = 525.0
+offset_bottom = 280.0
+
+[connection signal="pressed" from="calculate" to="." method="_on_calculate_pressed"]

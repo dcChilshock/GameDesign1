@@ -12,9 +12,9 @@ func _process(delta):
 
 
 func _on_clear_pressed():
-	$LineEdit.text=""
-	$LineEdit2.text=""
-	$LineEdit3.text=""
+	$B.text=""
+	$C.text=""
+	$A.text=""
 	$Label4.text=""
 
 
@@ -23,12 +23,10 @@ func _on_exit_pressed():
 
 
 func _on_calculate_pressed():
-	var a = int($LineEdit.text)
-	var aa= int($aa.text)
-	var b= int($B2.text)
-	var bb= int($Bb.text)
-	var c= int($Cc.text)
-	var cc= int($ccc.text)
-	var x = 1
-	var Quadequation = a * (x * x) + (b * x) + cc
-	
+	var A=int($Line.text)
+	var B=int($B2.text)
+	var C=int($Cc.text)
+	var x=0
+	var proot = (- B + sqrt(B**2 - 4 * A * C))/2 * A
+	var nroot = (- B - sqrt(B**2 - 4 * A * C))/2 * A
+	$Label4.text = "roots are %d and %d" % [proot , nroot]
