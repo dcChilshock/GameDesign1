@@ -1,4 +1,4 @@
-extends Control
+extends ItemList
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,8 +20,4 @@ func _on_exit_pressed():
 
 
 func _on_calculate_pressed():
-	$ItemList.add_item("x----y")
-	for num in range(-12 , 16+1, 1):
-		var line = "%d ----- %d"%[num,pow(num,6)-(3*pow(num,5))-(93*pow(num,4))+(87*pow(num,3))+(1596*pow(num,2))-(1380*num)-2800]
-		$ItemList.add_item(line)
-
+	pass # Replace with function body.
