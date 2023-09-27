@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://ct6cfc648kbv0"]
+[gd_scene load_steps=2 format=3 uid="uid://ct6cfc648kbv0"]
+
+[ext_resource type="Script" path="res://122i.gd" id="1_00ktw"]
 
 [node name="122i" type="Control"]
 layout_mode = 3
@@ -7,3 +9,39 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_00ktw")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 33.0
+offset_right = 588.0
+offset_bottom = 225.0
+
+[node name="calculate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 44.0
+offset_right = 163.0
+offset_bottom = 84.0
+text = "calculate"
+
+[node name="clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 88.0
+offset_right = 162.0
+offset_bottom = 128.0
+text = "clear"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 136.0
+offset_right = 161.0
+offset_bottom = 176.0
+text = "exit"
+
+[connection signal="pressed" from="calculate" to="." method="_on_calculate_pressed"]
+[connection signal="pressed" from="clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
