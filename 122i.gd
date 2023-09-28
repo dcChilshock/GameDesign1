@@ -12,15 +12,19 @@ func _process(delta):
 
 
 func _on_clear_pressed():
-	pass # Replace with function body.
+	$ItemList.clear()
 
 
 func _on_exit_pressed():
-	pass # Replace with function body.
+	get_tree().exit()
 
 
 func _on_calculate_pressed():
 	$ItemList.add_item("Number-----Square-----Square root")
 	for num in range(-25, 25+1, 1):
-		var line = "%d ----- %f ----- %d" % [num, abs(num)*0.33 , num**3 ]
+		var ncbrt = abs(num)*0.33
+		if num<0:
+			ncbrt*=-1
+		var line = "%d ----- %f ----- %d" % [num, ncbrt , num**3 ] 
 		$ItemList.add_item(line)
+	
