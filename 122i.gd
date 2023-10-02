@@ -16,7 +16,7 @@ func _on_clear_pressed():
 
 
 func _on_exit_pressed():
-	get_tree().exit()
+	get_tree().quit()
 
 
 func _on_calculate_pressed():
