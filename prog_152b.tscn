@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://cul8ht4awhqro"]
+
+[ext_resource type="Script" path="res://prog_152b.gd" id="1_k80a2"]
+
+[node name="prog_152b" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k80a2")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 56.0
+offset_right = 626.0
+offset_bottom = 183.0
+
+[node name="calculate" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 34.0
+offset_right = 243.0
+offset_bottom = 93.0
+text = "calculate"
+
+[node name="clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 110.0
+offset_right = 247.0
+offset_bottom = 169.0
+text = "clear"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 200.0
+offset_right = 248.0
+offset_bottom = 259.0
+text = "exit"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 212.0
+offset_right = 540.0
+offset_bottom = 276.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 216.0
+offset_right = 423.0
+offset_bottom = 276.0
+text = "Enter desired num"
+
+[connection signal="pressed" from="calculate" to="." method="_on_calculate_pressed"]
