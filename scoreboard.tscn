@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://caofpfmn4rf5f"]
+
+[ext_resource type="Script" path="res://scoreboard.gd" id="1_uovsk"]
+
+[node name="scoreboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uovsk")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 27.0
+offset_right = 236.0
+offset_bottom = 84.0
+text = "modify points"
+
+[node name="mainlabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 95.0
+offset_right = 465.0
+offset_bottom = 245.0
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 15.0
+offset_right = 355.0
+offset_bottom = 60.0
+
+[node name="update" type="Button" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 151.0
+offset_right = 132.0
+offset_bottom = 194.0
+text = "update"
+
+[node name="reset" type="Button" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 206.0
+offset_right = 132.0
+offset_bottom = 249.0
+text = "reset"
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 261.0
+offset_right = 265.0
+offset_bottom = 300.0
+text = "exit"
+
+[connection signal="pressed" from="update" to="." method="_on_update_pressed"]
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
