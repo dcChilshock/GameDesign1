@@ -11,32 +11,142 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3jtwm")
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 67.0
-offset_top = 19.0
-offset_right = 134.063
-offset_bottom = 50.0
+offset_right = 1154.0
+offset_bottom = 645.0
 
-[node name="LineEdit2" type="LineEdit" parent="."]
+[node name="lineeditone" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 67.0
-offset_top = 61.0
-offset_right = 134.063
-offset_bottom = 92.0
+offset_left = 211.0
+offset_top = 195.0
+offset_right = 278.063
+offset_bottom = 226.0
 
-[node name="Label" type="Label" parent="."]
+[node name="lineedittwo" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 18.0
-offset_right = 52.0
-offset_bottom = 46.0
-text = "Num"
+offset_left = 208.0
+offset_top = 334.0
+offset_right = 275.063
+offset_bottom = 365.0
 
-[node name="Label2" type="Label" parent="."]
+[node name="num1lbl" type="Label" parent="."]
 layout_mode = 0
-offset_left = 14.0
-offset_top = 65.0
-offset_right = 54.0
-offset_bottom = 93.0
+offset_left = 148.0
+offset_top = 194.0
+offset_right = 210.0
+offset_bottom = 222.0
+text = "Num1"
+
+[node name="num2lbl" type="Label" parent="."]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 332.0
+offset_right = 189.0
+offset_bottom = 358.0
 text = "Num2"
+
+[node name="operationlbl" type="Label" parent="."]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 262.0
+offset_right = 205.0
+offset_bottom = 290.0
+text = "operation"
+
+[node name="operationtext" type="Label" parent="."]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 260.0
+offset_right = 397.0
+offset_bottom = 309.0
+
+[node name="Resultlbl" type="Label" parent="."]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 420.0
+offset_right = 204.0
+offset_bottom = 448.0
+text = "Result"
+
+[node name="Resulttext" type="Label" parent="."]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 422.0
+offset_right = 371.0
+offset_bottom = 477.0
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 39.0
+offset_right = 352.0
+offset_bottom = 86.0
+text = "Clear"
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 41.0
+offset_right = 518.0
+offset_bottom = 88.0
+text = "Exit"
+
+[node name="btnadd" type="Button" parent="."]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 43.0
+offset_right = 874.0
+offset_bottom = 90.0
+text = "+ (add)"
+
+[node name="btnsub" type="Button" parent="."]
+layout_mode = 0
+offset_left = 910.0
+offset_top = 43.0
+offset_right = 1050.0
+offset_bottom = 90.0
+text = "- (sub)"
+
+[node name="btnmul" type="Button" parent="."]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 107.0
+offset_right = 874.0
+offset_bottom = 154.0
+text = "X (mul)"
+
+[node name="btndiv" type="Button" parent="."]
+layout_mode = 0
+offset_left = 910.0
+offset_top = 107.0
+offset_right = 1050.0
+offset_bottom = 154.0
+text = "/ (div)"
+
+[node name="btnpow" type="Button" parent="."]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 170.0
+offset_right = 874.0
+offset_bottom = 217.0
+text = "** (pow)"
+
+[node name="btnmod" type="Button" parent="."]
+layout_mode = 0
+offset_left = 910.0
+offset_top = 170.0
+offset_right = 1050.0
+offset_bottom = 217.0
+text = "MOD"
+
+[node name="reset" type="Button" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 38.0
+offset_right = 188.0
+offset_bottom = 85.0
+text = "reset"
+
+[connection signal="pressed" from="btnadd" to="." method="_on_btnadd_pressed"]
+[connection signal="pressed" from="btnmod" to="." method="_on_btnmod_pressed"]
