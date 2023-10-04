@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://m4bbrovw8ftx"]
+
+[ext_resource type="Script" path="res://calculate.gd" id="1_3jtwm"]
+
+[node name="calculate" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3jtwm")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 19.0
+offset_right = 134.063
+offset_bottom = 50.0
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 61.0
+offset_right = 134.063
+offset_bottom = 92.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 18.0
+offset_right = 52.0
+offset_bottom = 46.0
+text = "Num"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 65.0
+offset_right = 54.0
+offset_bottom = 93.0
+text = "Num2"
