@@ -149,4 +149,5 @@ offset_bottom = 85.0
 text = "reset"
 
 [connection signal="pressed" from="btnadd" to="." method="_on_btnadd_pressed"]
+[connection signal="pressed" from="btnsub" to="." method="_on_btnsub_pressed"]
 [connection signal="pressed" from="btnmod" to="." method="_on_btnmod_pressed"]

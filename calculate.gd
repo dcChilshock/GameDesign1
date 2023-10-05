@@ -49,4 +49,21 @@ func _on_btnadd_pressed():
 	$Resulttext.text= ": %d" % [add] 
 	
 func _on_btnmod_pressed():
-	pass # Replace with function body.
+	var num1 = lineeditone
+	var num2 = lineedittwo
+	var mod = mod2num(num1, num2)
+	var operation = 0
+	var operation = $operationtext.text="mod"
+	$Resulttextbox.text=": %d" % [mod]
+
+
+
+func _on_btnsub_pressed():
+	var num1 = lineeditone
+
+	var num2 = lineedittwo
+	var sub = subfunc(whatever it’s called) (num1, num2)
+	var operation = "subtraction"
+	$Resulttextbox.text=": %d" % [sub]
+
+
