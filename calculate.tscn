@@ -76,14 +76,6 @@ offset_top = 422.0
 offset_right = 371.0
 offset_bottom = 477.0
 
-[node name="Clear" type="Button" parent="."]
-layout_mode = 0
-offset_left = 212.0
-offset_top = 39.0
-offset_right = 352.0
-offset_bottom = 86.0
-text = "Clear"
-
 [node name="quit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 378.0
@@ -142,12 +134,17 @@ text = "MOD"
 
 [node name="reset" type="Button" parent="."]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 38.0
-offset_right = 188.0
-offset_bottom = 85.0
+offset_left = 217.0
+offset_top = 43.0
+offset_right = 357.0
+offset_bottom = 90.0
 text = "reset"
 
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="btnadd" to="." method="_on_btnadd_pressed"]
 [connection signal="pressed" from="btnsub" to="." method="_on_btnsub_pressed"]
+[connection signal="pressed" from="btnmul" to="." method="_on_btnmul_pressed"]
+[connection signal="pressed" from="btndiv" to="." method="_on_btndiv_pressed"]
+[connection signal="pressed" from="btnpow" to="." method="_on_btnpow_pressed"]
 [connection signal="pressed" from="btnmod" to="." method="_on_btnmod_pressed"]
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
