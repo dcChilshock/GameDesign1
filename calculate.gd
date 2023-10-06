@@ -60,9 +60,8 @@ func _on_btnmod_pressed():
 
 func _on_btnsub_pressed():
 	var num1 = lineeditone
-
 	var num2 = lineedittwo
-	var sub = subfunc(whatever it’s called) (num1, num2)
+	var sub = sub2num(num1, num2)
 	var operation = "subtraction"
 	$Resulttextbox.text=": %d" % [sub]
 
