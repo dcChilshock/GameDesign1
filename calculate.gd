@@ -61,15 +61,7 @@ func _on_btnmul_pressed():
 func _on_btndiv_pressed():
 	var num1 = int($lineeditone.text)
 	var num2 = int($lineedittwo.text)
-	var div = 0
-	if num1 == 0 and num2 == 0:
-		$Resulttext.text="Cant divide by zero"
-	elif num1 > 0 and num2 == 0:
-		$Resulttext.text="Cant divide by zero"
-	elif num1 == 0 and num2>0: 
-		$Resulttext.text="Cant divide by zero"
-	elif num1 > 0 and num2 >0:
-		div=div2num(num1,num2)
+	var div=div2num(num1,num2)
 	$Resulttext.text= ": %d" % [div]
 	var operation = "division" 
 	$operationtext.text= operation
