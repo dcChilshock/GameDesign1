@@ -25,7 +25,7 @@ func _on_calculate_pressed():
 	var pie = 3.14159
 	var area = getarea(pie, radius)
 	var circum = getcir(pie, radius)
-	$Label2.text = "area: %f   %f"
+	$Label2.text = "area: %f\n Circumfrence %f" % [area, circum]
 
 
 func _on_exit_pressed():
