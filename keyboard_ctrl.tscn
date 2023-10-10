@@ -62,6 +62,7 @@ polygon = PackedVector2Array(-207.102, 151.93, -218.522, 633.499, 418, 636, 3133
 
 [node name="interact" type="RigidBody2D" parent="."]
 position = Vector2(1605, 112)
+input_pickable = true
 freeze = true
 
 [node name="Sprite1" type="Sprite2D" parent="interact"]
@@ -86,6 +87,7 @@ position = Vector2(113.5, 14)
 shape = SubResource("RectangleShape2D_2h7xi")
 
 [node name="Button" type="Button" parent="dragable"]
+visible = false
 offset_left = 69.0
 offset_top = -29.0
 offset_right = 157.0
