@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwk6pw7sy7c5q"]
+[gd_scene load_steps=10 format=3 uid="uid://cwk6pw7sy7c5q"]
 
 [ext_resource type="Script" path="res://keyboard_ctrl.gd" id="1_fl6fl"]
 [ext_resource type="Texture2D" uid="uid://mvohwse5rt7s" path="res://icon.svg" id="1_l61ip"]
 [ext_resource type="Script" path="res://kbdplayer.gd" id="1_ueih7"]
+[ext_resource type="PackedScene" uid="uid://c0abdx5cp5gar" path="res://kbdenemy.tscn" id="4_7aqel"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dkhns"]
 radius = 32.0
@@ -61,13 +62,13 @@ polygon = PackedVector2Array(-207.102, 151.93, -218.522, 633.499, 418, 636, 3133
 [node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
 
 [node name="interact" type="RigidBody2D" parent="."]
-position = Vector2(1605, 112)
+position = Vector2(1595, 126)
 input_pickable = true
 freeze = true
 
 [node name="Sprite1" type="Sprite2D" parent="interact"]
 position = Vector2(-66, 75)
-scale = Vector2(90, 109)
+scale = Vector2(90, 94)
 texture = SubResource("PlaceholderTexture2D_fvuq8")
 
 [node name="CollisionShape1" type="CollisionShape2D" parent="interact"]
@@ -82,18 +83,26 @@ position = Vector2(113.5, 13.5)
 scale = Vector2(91, 91)
 texture = SubResource("PlaceholderTexture2D_fvuq8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dragable"]
+[node name="CollisionShape2" type="CollisionShape2D" parent="dragable"]
 position = Vector2(113.5, 14)
 shape = SubResource("RectangleShape2D_2h7xi")
 
 [node name="Button" type="Button" parent="dragable"]
-visible = false
 offset_left = 69.0
 offset_top = -29.0
 offset_right = 157.0
 offset_bottom = 57.0
 focus_mode = 0
 
+[node name="kbdenemy" parent="." instance=ExtResource("4_7aqel")]
+position = Vector2(1410, 119)
+max_contacts_reported = 1
+
+[node name="CollisionShape3" parent="kbdenemy" index="1"]
+position = Vector2(-12.5, 105)
+
 [connection signal="mouse_entered" from="interact" to="." method="_on_interact_mouse_entered"]
 [connection signal="button_down" from="dragable/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="dragable/Button" to="." method="_on_button_button_up"]
+
+[editable path="kbdenemy"]
