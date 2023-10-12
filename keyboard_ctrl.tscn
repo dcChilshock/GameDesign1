@@ -1,13 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwk6pw7sy7c5q"]
+[gd_scene load_steps=8 format=3 uid="uid://cwk6pw7sy7c5q"]
 
 [ext_resource type="Script" path="res://keyboard_ctrl.gd" id="1_fl6fl"]
-[ext_resource type="Texture2D" uid="uid://mvohwse5rt7s" path="res://icon.svg" id="1_l61ip"]
-[ext_resource type="Script" path="res://kbdplayer.gd" id="1_ueih7"]
+[ext_resource type="PackedScene" uid="uid://c8un7gd8rcpp8" path="res://kbdplayer.tscn" id="2_blm5v"]
 [ext_resource type="PackedScene" uid="uid://c0abdx5cp5gar" path="res://kbdenemy.tscn" id="4_7aqel"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dkhns"]
-radius = 32.0
-height = 100.0
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_j13d1"]
 a = Vector2(428, 13)
@@ -24,22 +19,7 @@ size = Vector2(89, 88)
 position = Vector2(1, 1)
 script = ExtResource("1_fl6fl")
 
-[node name="kbdplayer" type="CharacterBody2D" parent="."]
-position = Vector2(690, 30)
-script = ExtResource("1_ueih7")
-
-[node name="Sprite2D" type="Sprite2D" parent="kbdplayer"]
-position = Vector2(59.5, 70.375)
-scale = Vector2(0.523438, 0.806641)
-texture = ExtResource("1_l61ip")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="kbdplayer"]
-position = Vector2(60, 70)
-shape = SubResource("CapsuleShape2D_dkhns")
-
-[node name="Camera2D" type="Camera2D" parent="kbdplayer"]
-position = Vector2(60, 70)
-zoom = Vector2(1.5, 1.5)
+[node name="kbdplayer" parent="." instance=ExtResource("2_blm5v")]
 
 [node name="startplatform" type="StaticBody2D" parent="."]
 position = Vector2(477, 149)

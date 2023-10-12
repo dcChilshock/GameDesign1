@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://mvohwse5rt7s" path="res://icon.svg" id="2_acuci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mpcf"]
-size = Vector2(45, 50)
+size = Vector2(44, 49)
 
 [node name="kbdenemy" type="RigidBody2D"]
 position = Vector2(189, 175)

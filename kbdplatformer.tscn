@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://coi4io3owm76b"]
+
+[ext_resource type="PackedScene" uid="uid://c8un7gd8rcpp8" path="res://kbdplayer.tscn" id="1_ngira"]
+[ext_resource type="Script" path="res://kbdplatformer.gd" id="1_yxvbm"]
+[ext_resource type="PackedScene" uid="uid://c0abdx5cp5gar" path="res://kbdenemy.tscn" id="2_fnk1a"]
+[ext_resource type="Script" path="res://kdbexit.gd" id="5_kqj3o"]
+[ext_resource type="Script" path="res://kbdenemy.gd" id="6_ynrl0"]
+[ext_resource type="Texture2D" uid="uid://mvohwse5rt7s" path="res://icon.svg" id="7_f88mk"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rte6t"]
+a = Vector2(343, 43)
+b = Vector2(37, 45)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_52g65"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nrif4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_quybm"]
+size = Vector2(56, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yavp0"]
+size = Vector2(155.25, 156.75)
+
+[node name="kbdplatformer" type="Node2D"]
+script = ExtResource("1_yxvbm")
+
+[node name="world" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
+position = Vector2(13, -19)
+scale = Vector2(1.94715, 1)
+polygon = PackedVector2Array(22, 203, 54, 202, 116, 201, 164, 207, 192, 205, 232, 207, 279, 208, 309, 210, 347, 211, 398, 211, 428, 211, 460, 212, 483, 209, 524.356, 171, 582.39, 124, 622.448, 112, 645.045, 128, 671.751, 160, 723.108, 170, 762.14, 232, 834.04, 308, 1026.12, 468, 1105.21, 488, 1128.32, 402, 1200.22, 437, 1189.94, 523, 1231.54, 548, 1245.41, 358, 1314.23, 373, 1330.66, 538, 1895.08, 639, 2114.37, 629, 2509.31, 629, 2627.43, 613, 2739.39, 576, 3104.54, 567, 3106.08, -583, 59.5743, -739, 36.9771, 189, -8.21714, 181, -7.19, 19, -2.05428, -755, 0, -815, 3129.19, -711, 3194.41, -680, 3170.28, 768, 2805.55, 807.747, 1922.3, 904, 665.588, 573, 8, 515, 6.16285, 200)
+
+[node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
+
+[node name="world2" type="StaticBody2D" parent="."]
+position = Vector2(5493, 413)
+
+[node name="CollisionPolygon2" type="CollisionPolygon2D" parent="world2"]
+polygon = PackedVector2Array(-20, -46, -280, -40, -813, -158, -1020, -199, -1446, -423, -2106, -454, -2892, -423, -3238, -558, -3576, -474, -3628, -212, -3664, -603, -3516, -751, -2973, -706, -2600, -679, -1743, -648, -1128, -526, -706, -347, -225, -360, -19, -203)
+
+[node name="Polygon2D" type="Polygon2D" parent="world2/CollisionPolygon2"]
+
+[node name="kbdplayer" parent="." instance=ExtResource("1_ngira")]
+position = Vector2(1592, 0)
+
+[node name="kbdenemy" parent="." instance=ExtResource("2_fnk1a")]
+position = Vector2(1988, 72)
+
+[node name="CollisionShape3" parent="kbdenemy" index="1"]
+position = Vector2(-14, 107)
+
+[node name="world barrier" type="StaticBody2D" parent="."]
+position = Vector2(5, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world barrier"]
+position = Vector2(2616, 302)
+shape = SubResource("SegmentShape2D_rte6t")
+
+[node name="Sprite2D" type="Sprite2D" parent="world barrier"]
+position = Vector2(2822, 346)
+scale = Vector2(334.75, 1.68751)
+texture = SubResource("PlaceholderTexture2D_52g65")
+
+[node name="kdbexit" type="Area2D" parent="."]
+position = Vector2(3082, 628)
+script = ExtResource("5_kqj3o")
+
+[node name="Sprite2D" type="Sprite2D" parent="kdbexit"]
+position = Vector2(2842, -171)
+scale = Vector2(59, 161)
+texture = SubResource("PlaceholderTexture2D_nrif4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kdbexit"]
+position = Vector2(2842, -171)
+shape = SubResource("RectangleShape2D_quybm")
+
+[node name="kbdenemy2" type="RigidBody2D" parent="."]
+position = Vector2(2577, 192)
+contact_monitor = true
+script = ExtResource("6_ynrl0")
+
+[node name="Sprite2D" type="Sprite2D" parent="kbdenemy2"]
+position = Vector2(655, 288)
+scale = Vector2(1.35156, 1.35644)
+texture = ExtResource("7_f88mk")
+
+[node name="Timer" type="Timer" parent="kbdenemy2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kbdenemy2"]
+position = Vector2(653.375, 285.625)
+shape = SubResource("RectangleShape2D_yavp0")
+
+[connection signal="body_entered" from="kbdenemy2" to="kbdenemy2" method="_on_body_entered" flags=18]
+[connection signal="timeout" from="kbdenemy2/Timer" to="kbdenemy2" method="_on_timer_timeout" flags=18]
+
+[editable path="kbdenemy"]
