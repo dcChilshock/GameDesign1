@@ -46,7 +46,7 @@ polygon = PackedVector2Array(-20, -46, -280, -40, -813, -158, -1020, -199, -1477
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world3"]
 position = Vector2(6, 51)
-polygon = PackedVector2Array(3262, 418, 3252, 604, 4081, 601, 4670, 586, 4645, 556, 4298, 509, 4299, 556, 4062, 565, 4026, 430, 3903, 419, 3901, 497, 3690, 499, 3765, 321, 3596, 339, 3585, 507, 3448, 508, 3447, 398, 3469, 285, 3368, 351, 3342, 389)
+polygon = PackedVector2Array(3262, 418, 3255.27, 543.169, 3252, 604, 4081, 601, 4670, 586, 4645, 556, 4298, 509, 4299, 556, 4062, 565, 4026, 430, 3903, 419, 3901, 497, 3690, 499, 3765, 321, 3596, 339, 3585, 507, 3448, 508, 3447, 398, 3469, 285, 3368, 351, 3342, 389)
 
 [node name="Polygon2D" type="Polygon2D" parent="world3/CollisionPolygon2D"]
 
@@ -135,12 +135,18 @@ max_contacts_reported = 1
 [node name="CollisionShape3" parent="kbdenemy" index="1"]
 position = Vector2(-12, 105)
 
+[node name="Characters" parent="kbdenemy" index="3"]
+position = Vector2(4, 66)
+
 [node name="pitenemy3" parent="." instance=ExtResource("2_fnk1a")]
 position = Vector2(3208, 470)
 max_contacts_reported = 1
 
 [node name="CollisionShape3" parent="pitenemy3" index="1"]
 position = Vector2(-12, 105)
+
+[node name="Characters" parent="pitenemy3" index="3"]
+position = Vector2(6, 64)
 
 [node name="pitenemy2" parent="." instance=ExtResource("2_fnk1a")]
 position = Vector2(3814, 405)
@@ -149,12 +155,18 @@ max_contacts_reported = 1
 [node name="CollisionShape3" parent="pitenemy2" index="1"]
 position = Vector2(-12, 105)
 
+[node name="Characters" parent="pitenemy2" index="3"]
+position = Vector2(-4, 69)
+
 [node name="pitenemy" parent="." instance=ExtResource("2_fnk1a")]
 position = Vector2(4188, 471)
 max_contacts_reported = 1
 
 [node name="CollisionShape3" parent="pitenemy" index="1"]
 position = Vector2(-12, 105)
+
+[node name="Characters" parent="pitenemy" index="3"]
+position = Vector2(6, 63)
 
 [node name="bigboy" type="RigidBody2D" parent="."]
 position = Vector2(2130, 205)
