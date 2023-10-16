@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwk6pw7sy7c5q"]
+[gd_scene load_steps=9 format=3 uid="uid://cwk6pw7sy7c5q"]
 
 [ext_resource type="Script" path="res://keyboard_ctrl.gd" id="1_fl6fl"]
 [ext_resource type="PackedScene" uid="uid://c8un7gd8rcpp8" path="res://kbdplayer.tscn" id="2_blm5v"]
@@ -14,6 +14,9 @@ b = Vector2(3, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2h7xi"]
 size = Vector2(89, 88)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rumjo"]
+radius = 26.5
 
 [node name="keyboard_ctrl" type="Node2D"]
 position = Vector2(1, 1)
@@ -80,6 +83,10 @@ max_contacts_reported = 1
 
 [node name="CollisionShape3" parent="kbdenemy" index="1"]
 position = Vector2(-12.5, 105)
+shape = SubResource("CircleShape2D_rumjo")
+
+[node name="Characters" parent="kbdenemy" index="3"]
+position = Vector2(5, 67)
 
 [connection signal="mouse_entered" from="interact" to="." method="_on_interact_mouse_entered"]
 [connection signal="button_down" from="dragable/Button" to="." method="_on_button_button_down"]
