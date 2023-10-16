@@ -30,7 +30,7 @@ script = ExtResource("1_yxvbm")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
 position = Vector2(13, -19)
 scale = Vector2(1.94715, 1)
-polygon = PackedVector2Array(19.0021, 202, 40.5721, 202, 54, 202, 116, 201, 164, 207, 192, 205, 232, 207, 279, 208, 309, 210, 327.145, 172, 354.878, 161, 379.529, 134, 410.857, 116, 437.049, 106, 468.377, 119, 504.84, 56, 579.308, -32, 636.315, -30, 645.045, 128, 671.751, 160, 723.108, 170, 762.14, 232, 834.04, 308, 1026.12, 468, 1114.96, 491, 1122.15, 428, 1208.95, 442, 1203.3, 511, 1248.49, 518, 1258.76, 371, 1314.23, 373, 1320.39, 627, 1527.87, 632, 1895.08, 639, 2114.37, 629, 2509.31, 629, 2627.43, 613, 2739.39, 576, 3104.54, 567, 3106.08, -583, 59.5743, -739, 42.6264, 200, 19.0021, 202, -6.67642, 196, -7.19, 19, -2.05428, -755, 0, -815, 3129.19, -711, 3194.41, -680, 3170.28, 768, 2805.55, 807.747, 1922.3, 904, 665.588, 573, -6.16285, 515, -6.67642, 197)
+polygon = PackedVector2Array(19.0021, 202, 40.5721, 202, 54, 202, 115.554, 206, 164, 207, 192, 205, 232, 207, 279, 208, 309, 210, 327.145, 172, 354.878, 161, 379.529, 134, 410.857, 116, 437.049, 106, 468.377, 119, 504.84, 56, 579.308, -32, 636.315, -30, 645.045, 128, 671.751, 160, 723.108, 170, 762.14, 232, 834.04, 308, 1026.12, 468, 1114.96, 491, 1122.15, 428, 1208.95, 442, 1203.3, 511, 1248.49, 518, 1258.76, 371, 1314.23, 373, 1320.39, 627, 1527.87, 632, 1895.08, 639, 2114.37, 629, 2509.31, 629, 2627.43, 613, 2739.39, 576, 3104.54, 567, 3106.08, -583, 59.5743, -739, 42.6264, 200, 19.0021, 202, -6.67642, 196, -7.19, 19, -2.05428, -755, 0, -815, 3129.19, -711, 3194.41, -680, 3170.28, 768, 2805.55, 807.747, 1922.3, 904, 665.588, 573, -6.16285, 515, -6.67642, 197)
 
 [node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
 
@@ -187,12 +187,25 @@ position = Vector2(2842, -171)
 shape = SubResource("RectangleShape2D_quybm")
 
 [node name="dragable" parent="." instance=ExtResource("7_a46wg")]
-position = Vector2(54, 88)
+position = Vector2(170, 91)
+
+[node name="Sprite2D" parent="dragable" index="0"]
+position = Vector2(113.5, 32)
+scale = Vector2(91, 54)
+
+[node name="CollisionShape2" parent="dragable" index="1"]
+position = Vector2(113, 31.5)
+
+[node name="Button" parent="dragable" index="2"]
+offset_top = 7.0
 
 [connection signal="body_entered" from="bigboy" to="bigboy" method="_on_body_entered" flags=18]
 [connection signal="timeout" from="bigboy/Timer" to="bigboy" method="_on_timer_timeout" flags=18]
+[connection signal="button_down" from="dragable/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="dragable/Button" to="." method="_on_button_button_up"]
 
 [editable path="kbdenemy"]
 [editable path="pitenemy3"]
 [editable path="pitenemy2"]
 [editable path="pitenemy"]
+[editable path="dragable"]
