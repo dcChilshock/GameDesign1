@@ -206,13 +206,14 @@ position = Vector2(113.5, 32)
 scale = Vector2(91, 54)
 
 [node name="CollisionShape2" parent="dragable" index="1"]
-position = Vector2(113, 31.5)
+position = Vector2(113, 30)
 
 [node name="Button" parent="dragable" index="2"]
 offset_top = 7.0
 
 [connection signal="body_entered" from="bigboy" to="bigboy" method="_on_body_entered" flags=18]
 [connection signal="timeout" from="bigboy/Timer" to="bigboy" method="_on_timer_timeout" flags=18]
+[connection signal="body_entered" from="kdbexit" to="kdbexit" method="_on_body_entered"]
 [connection signal="button_down" from="dragable/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="dragable/Button" to="." method="_on_button_button_up"]
 

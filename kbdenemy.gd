@@ -14,3 +14,4 @@ func _on_body_entered(body):
 	if body.name == "kbdplayer":
 		body.queue_free() #deleteplayer
 		OS.alert("You died!")
+		get_tree().reload_current_scene()
