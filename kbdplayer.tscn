@@ -78,15 +78,15 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dkhns"]
-radius = 38.0
-height = 108.0
+radius = 8.0
+height = 24.0
 
 [node name="kbdplayer" type="CharacterBody2D"]
-position = Vector2(601, 34)
+position = Vector2(652, 40)
 script = ExtResource("1_bfhmi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(130, 34)
+position = Vector2(130, 36)
 scale = Vector2(4.9375, 4.625)
 sprite_frames = SubResource("SpriteFrames_3hslc")
 
@@ -100,7 +100,7 @@ position = Vector2(131, 56)
 shape = SubResource("CapsuleShape2D_dkhns")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(60, 70)
+position = Vector2(131, 56)
 zoom = Vector2(1.5, 1.5)
 
 [node name="Characters" type="Sprite2D" parent="."]

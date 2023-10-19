@@ -1,27 +1,78 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0abdx5cp5gar"]
+[gd_scene load_steps=10 format=3 uid="uid://c0abdx5cp5gar"]
 
 [ext_resource type="Script" path="res://kbdenemy.gd" id="1_vfsor"]
 [ext_resource type="Texture2D" uid="uid://d0pgoybk7dcd7" path="res://assets/characters.png" id="2_jj352"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_afxj2"]
+atlas = ExtResource("2_jj352")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3pvo"]
+atlas = ExtResource("2_jj352")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnxic"]
+atlas = ExtResource("2_jj352")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y57dl"]
+atlas = ExtResource("2_jj352")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28dce"]
+atlas = ExtResource("2_jj352")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_toj0k"]
+animations = [{
+"frames": [{
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_afxj2")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_y3pvo")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_xnxic")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_y57dl")
+}],
+"loop": true,
+"name": &"enemy_move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28dce")
+}],
+"loop": true,
+"name": &"enemy_still",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4eq5"]
-size = Vector2(43, 54)
+size = Vector2(45.5, 39)
 
 [node name="kbdenemy" type="RigidBody2D"]
 position = Vector2(189, 175)
 contact_monitor = true
 script = ExtResource("1_vfsor")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-12, 105)
-scale = Vector2(0.390625, 0.429687)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(48, 89)
+scale = Vector2(2.96875, 2.875)
+sprite_frames = SubResource("SpriteFrames_toj0k")
+animation = &"enemy_move"
 
 [node name="CollisionShape3" type="CollisionShape2D" parent="."]
-position = Vector2(51, 115)
+position = Vector2(47.25, 114.5)
 shape = SubResource("RectangleShape2D_d4eq5")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Characters" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(68, 77)
 scale = Vector2(3.2, 4.125)
 texture = ExtResource("2_jj352")

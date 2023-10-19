@@ -186,8 +186,9 @@ shape = SubResource("RectangleShape2D_yavp0")
 [node name="Timer" type="Timer" parent="bigboy"]
 
 [node name="kdbexit" type="Area2D" parent="."]
-position = Vector2(2962, 593)
+position = Vector2(-2158, 175)
 script = ExtResource("5_kqj3o")
+next_level = "level_design_collision"
 
 [node name="Sprite2D" type="Sprite2D" parent="kdbexit"]
 position = Vector2(2842, -171)
