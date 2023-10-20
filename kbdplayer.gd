@@ -39,6 +39,8 @@ func _physics_process(delta):
 		self.position.y -= JUMP_VELOCITY / 2
 	if Input.is_action_just_pressed("toggle_gravity"):
 		gravity_on = not gravity_on
+	if Input.is_action_just_pressed("ui_down"):
+		anim.play("crouch")
 	
 	update_animation(direction)
 	move_and_slide()
@@ -50,4 +52,6 @@ func update_animation(direction):
 		anim.play("walk")
 		anim.flip_h = direction < 0 
 	else:  #idle 
-		anim.play("default") 
+		pass
+		#anim.play("default") 
+	
