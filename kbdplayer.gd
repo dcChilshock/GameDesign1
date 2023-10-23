@@ -52,6 +52,5 @@ func update_animation(direction):
 		anim.play("walk")
 		anim.flip_h = direction < 0 
 	else:  #idle 
-		pass
-		#anim.play("default") 
+		anim.play("default") 
 	

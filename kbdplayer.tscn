@@ -112,7 +112,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_dxotx")
 }],
-"loop": false,
+"loop": true,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -139,7 +139,6 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dkhns"]
 radius = 4.0
-height = 28.0
 
 [node name="kbdplayer" type="CharacterBody2D"]
 position = Vector2(652, 40)
