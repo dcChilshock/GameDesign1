@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c8un7gd8rcpp8"]
+[gd_scene load_steps=20 format=3 uid="uid://c8un7gd8rcpp8"]
 
 [ext_resource type="Script" path="res://kbdplayer.gd" id="1_bfhmi"]
 [ext_resource type="Texture2D" uid="uid://byntjlyiqswyk" path="res://assets/skeletonBase.png" id="2_m4vmv"]
@@ -23,10 +23,6 @@ region = Rect2(288, 0, 32, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_uslve"]
 atlas = ExtResource("2_m4vmv")
 region = Rect2(0, 0, 32, 71)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gsc2o"]
-atlas = ExtResource("2_m4vmv")
-region = Rect2(192, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xo52j"]
 atlas = ExtResource("2_m4vmv")
@@ -92,14 +88,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uslve")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.4,
-"texture": SubResource("AtlasTexture_gsc2o")
-}, {
 "duration": 0.6,
 "texture": SubResource("AtlasTexture_xo52j")
 }, {
@@ -132,7 +125,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jpr3k")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
 "speed": 5.0
 }]
@@ -148,9 +141,7 @@ script = ExtResource("1_bfhmi")
 position = Vector2(130, 36)
 scale = Vector2(4.9375, 4.625)
 sprite_frames = SubResource("SpriteFrames_3hslc")
-animation = &"jump"
-frame = 4
-frame_progress = 1.0
+animation = &"crouch"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
