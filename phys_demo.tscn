@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbpvpi4nboqcl"]
+
+[ext_resource type="PackedScene" uid="uid://do1q8knoe8l5x" path="res://phys_ball.tscn" id="1_oyh52"]
+[ext_resource type="Script" path="res://phys_demo.gd" id="1_v62ft"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6nsfm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r7c7"]
+size = Vector2(1660, 21)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8c5lu"]
+font_size = 33
+
+[sub_resource type="LabelSettings" id="LabelSettings_p072y"]
+font_size = 34
+
+[node name="phys_demo" type="Node2D"]
+position = Vector2(62, 31)
+scale = Vector2(0.88, 1)
+script = ExtResource("1_v62ft")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(50, 241)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(548.5, 279)
+scale = Vector2(1661, 22)
+texture = SubResource("PlaceholderTexture2D_6nsfm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(548, 279)
+shape = SubResource("RectangleShape2D_2r7c7")
+
+[node name="phys_ball" parent="." instance=ExtResource("1_oyh52")]
+position = Vector2(429, 398)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 148.0
+offset_top = -10.0
+offset_right = 911.0
+offset_bottom = 378.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 13.6364
+offset_top = 6.0
+offset_right = 360.636
+offset_bottom = 141.0
+text = "GRAVITY: "
+label_settings = SubResource("LabelSettings_8c5lu")
+
+[node name="gravslider" type="HSlider" parent="Panel"]
+layout_mode = 0
+offset_left = 192.045
+offset_top = -26.0
+offset_right = 686.045
+offset_bottom = 91.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 61.0
+offset_right = 725.0
+offset_bottom = 119.0
+text = "Apply central force"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 15.6364
+offset_top = 293.0
+offset_right = 723.636
+offset_bottom = 351.0
+text = "APPLY"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 126.0
+offset_right = 146.0
+offset_bottom = 176.0
+text = "Inertia: "
+label_settings = SubResource("LabelSettings_p072y")
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 15.6364
+offset_top = 210.0
+offset_right = 142.636
+offset_bottom = 260.0
+text = "Velocity:"
+label_settings = SubResource("LabelSettings_p072y")
+
+[node name="editInertia" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 134.0
+offset_right = 716.0
+offset_bottom = 184.0
+
+[node name="editVx" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 171.318
+offset_top = 217.0
+offset_right = 327.318
+offset_bottom = 267.0
+
+[node name="editVy" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 542.909
+offset_top = 220.0
+offset_right = 696.909
+offset_bottom = 270.0
+
+[connection signal="value_changed" from="Panel/gravslider" to="." method="_on_gravslider_value_changed"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
