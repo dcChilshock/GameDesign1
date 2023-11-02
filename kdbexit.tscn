@@ -3,7 +3,7 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nrif4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_quybm"]
-size = Vector2(56, 158)
+size = Vector2(12, 151.75)
 
 [node name="kdbexit" type="Area2D"]
 

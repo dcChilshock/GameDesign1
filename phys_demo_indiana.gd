@@ -8,12 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	print($Boulder3.linear_velocity)
+	print($Boulder.linear_velocity)
 
 
 
-var boulder = $Boulder
-func _on_kdbexit_area_entered(area):
-	if area.name == "Boulder":
-		
-	
