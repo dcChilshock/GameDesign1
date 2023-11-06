@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://bigcfeeta0rtk"]
+
+[ext_resource type="Script" path="res://my_gui.gd" id="1_u0lje"]
+
+[node name="my_gui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u0lje")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -780.0
+offset_top = -513.0
+offset_right = 1196.0
+offset_bottom = 692.0
+
+[node name="resume" type="Button" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 55.0
+offset_right = 773.0
+offset_bottom = 217.0
+text = "RESUME"
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 48.0
+offset_right = 386.0
+offset_bottom = 213.0
+text = "QUIT"
+
+[connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
