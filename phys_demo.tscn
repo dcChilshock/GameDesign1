@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbpvpi4nboqcl"]
+[gd_scene load_steps=9 format=3 uid="uid://dbpvpi4nboqcl"]
 
 [ext_resource type="PackedScene" uid="uid://do1q8knoe8l5x" path="res://phys_ball.tscn" id="1_oyh52"]
 [ext_resource type="Script" path="res://phys_demo.gd" id="1_v62ft"]
@@ -14,6 +14,11 @@ font_size = 33
 [sub_resource type="LabelSettings" id="LabelSettings_p072y"]
 font_size = 34
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7rj2"]
+size = Vector2(127.045, 869)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0vuok"]
+
 [node name="phys_demo" type="Node2D"]
 position = Vector2(62, 31)
 scale = Vector2(0.88, 1)
@@ -27,8 +32,17 @@ position = Vector2(548.5, 279)
 scale = Vector2(1661, 22)
 texture = SubResource("PlaceholderTexture2D_6nsfm")
 
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(520.455, -334)
+scale = Vector2(1661, 22)
+texture = SubResource("PlaceholderTexture2D_6nsfm")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(548, 279)
+position = Vector2(519.318, -338)
+shape = SubResource("RectangleShape2D_2r7c7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(543.182, 286)
 shape = SubResource("RectangleShape2D_2r7c7")
 
 [node name="phys_ball" parent="." instance=ExtResource("1_oyh52")]
@@ -110,6 +124,27 @@ offset_left = 542.909
 offset_top = 220.0
 offset_right = 696.909
 offset_bottom = 270.0
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-25, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-78.4091, 245.5)
+shape = SubResource("RectangleShape2D_y7rj2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1281.82, 263)
+shape = SubResource("RectangleShape2D_y7rj2")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(-75, 247.375)
+scale = Vector2(110.727, 867.25)
+texture = SubResource("PlaceholderTexture2D_0vuok")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(1281.82, 265)
+scale = Vector2(110.727, 867.25)
+texture = SubResource("PlaceholderTexture2D_0vuok")
 
 [connection signal="value_changed" from="Physicsboard/gravslider" to="." method="_on_gravslider_value_changed"]
 [connection signal="pressed" from="Physicsboard/Button" to="." method="_on_button_pressed"]

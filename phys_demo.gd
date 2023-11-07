@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Panel/gravslider.value = $phys_ball.gravity_scale
+	$Physicsboard/gravslider.value = $phys_ball.gravity_scale
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,9 +31,9 @@ func _on_button_pressed():
 
 
 func _on_button_2_pressed():
-	var yinertia= float($Panel/editInertia.text)
-	var vx = int($Panel/editVx.text)
-	var vy = int($Panel/editVy.text)
+	var yinertia= float($Physicsboard/gravslider.text)
+	var vx = int($Physicsboard/editVx.text)
+	var vy = int($Physicsboard/editVy.text)
 	var velocity = Vector2(vx,vy)
 	for child in get_children():
 		if child is RigidBody2D:
