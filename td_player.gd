@@ -1,14 +1,23 @@
 extends CharacterBody2D
 const SPEED = 100
+const MAX_HEALTH_A = 400.00
 #const JUMP_VELOCITY = -400.0
+
+@export var data = {
+	"max_healt": 60.0, #20hp per heart: 5 per fraction
+	"health": 60.0 #min 60 max 400
+	
+	
+}
 var inertia = Vector2()
 var look_direction = Vector2.DOWN #(0,1)
 var menu_scene = preload("res://my_gui.tscn")
 var menu_instance = null
-
+@onready var p_HUD = get_tree().get_first_node_in_group("HUD")
 func _ready():
+	p_HUD.show()
 	menu_instance = menu_scene.instantiate()
-	add_child(menu_instance) 
+	get_tree().get_root().add_child.call_deferred(menu_instance)
 	menu_instance.hide()
 
 func _physics_process(delta):
