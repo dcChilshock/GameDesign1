@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Player_hud.gd" id="1_v7xt3"]
 [ext_resource type="Texture2D" uid="uid://c4l81p7rnw2tv" path="res://assets/objects.png" id="2_d3xwd"]
 
-[node name="Player_hud" type="CanvasLayer"]
+[node name="Player_hud" type="CanvasLayer" groups=["HUD"]]
 script = ExtResource("1_v7xt3")
 
 [node name="Playerhealth" type="Control" parent="."]

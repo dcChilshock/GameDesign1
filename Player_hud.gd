@@ -37,3 +37,11 @@ func _process(delta):
 		var y = (index / HEART_ROW_SIZE) * HEART_OFFSET 
 		heart.position = Vector2(x, y) 
 		
+		# frame 8 empty, 7 1/4, 6 half , 5 3/4, 4 full 
+		if index > full_hearts:
+			heart.frame = 8
+		elif index == full_hearts:
+			heart.frame = 8 - int(remainder / 5)
+		elif index < full_hearts:
+			heart.frame = 4
+			

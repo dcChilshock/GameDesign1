@@ -3564,4 +3564,4 @@ layer_0/tile_data = PackedInt32Array(524310, 262144, 10, 524311, 327680, 9, 5898
 [node name="TileMap" type="TileMap" parent="2dworld"]
 format = 2
 
-[node name="Player_hud" parent="." groups=["HUD"] instance=ExtResource("4_bxu4c")]
+[node name="Player_hud" parent="." instance=ExtResource("4_bxu4c")]
