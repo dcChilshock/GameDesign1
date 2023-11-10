@@ -22,7 +22,8 @@ func draw_hearts():
 
 
 func _ready():
-	pass # Replace with function body.
+	draw_hearts()
+	pass 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,4 +45,3 @@ func _process(delta):
 			heart.frame = 8 - int(remainder / 5)
 		elif index < full_hearts:
 			heart.frame = 4
-			

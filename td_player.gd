@@ -1,13 +1,12 @@
 extends CharacterBody2D
 const SPEED = 100
-const MAX_HEALTH_A = 400.00
+const MAX_HEALTH_TOTAl = 400.00
 #const JUMP_VELOCITY = -400.0
 
 @export var data = {
-	"max_healt": 60.0, #20hp per heart: 5 per fraction
+	"max_health": 60.0, #20hp per heart: 5 per fraction
 	"health": 60.0 #min 60 max 400
-	
-	
+	"coin": 0
 }
 var inertia = Vector2()
 var look_direction = Vector2.DOWN #(0,1)

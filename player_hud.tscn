@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ciye1xda3ljsy"]
+[gd_scene load_steps=4 format=3 uid="uid://ciye1xda3ljsy"]
 
 [ext_resource type="Script" path="res://Player_hud.gd" id="1_v7xt3"]
 [ext_resource type="Texture2D" uid="uid://c4l81p7rnw2tv" path="res://assets/objects.png" id="2_d3xwd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m7167"]
+font_size = 66
 
 [node name="Player_hud" type="CanvasLayer" groups=["HUD"]]
 script = ExtResource("1_v7xt3")
@@ -19,3 +22,27 @@ texture = ExtResource("2_d3xwd")
 hframes = 33
 vframes = 20
 frame = 8
+
+[node name="money" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 496.0
+offset_right = 448.0
+offset_bottom = 640.0
+
+[node name="coin_icon" type="Sprite2D" parent="money"]
+position = Vector2(32, 112)
+scale = Vector2(4, 4)
+texture = ExtResource("2_d3xwd")
+hframes = 33
+vframes = 20
+frame = 132
+
+[node name="coins" type="Label" parent="money"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 158.0
+text = "0"
+label_settings = SubResource("LabelSettings_m7167")
