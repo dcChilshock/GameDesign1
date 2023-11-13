@@ -5,8 +5,8 @@ const MAX_HEALTH_TOTAl = 400.00
 
 @export var data = {
 	"max_health": 60.0, #20hp per heart: 5 per fraction
-	"health": 60.0 #min 60 max 400
-	"coin": 0
+	"health": 60.0, #min 60 max 400
+	"coin": 0,
 }
 var inertia = Vector2()
 var look_direction = Vector2.DOWN #(0,1)
