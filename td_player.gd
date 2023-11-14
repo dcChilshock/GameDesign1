@@ -6,13 +6,16 @@ const MAX_HEALTH_TOTAl = 400.00
 @export var data = {
 	"max_health": 60.0, #20hp per heart: 5 per fraction
 	"health": 60.0, #min 60 max 400
-	"coin": 0,
+	"money": 0,
 }
 var inertia = Vector2()
 var look_direction = Vector2.DOWN #(0,1)
 var menu_scene = preload("res://my_gui.tscn")
 var menu_instance = null
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
+
+func pickup_money(value):
+	data.money += value
 func _ready():
 	p_HUD.show()
 	menu_instance = menu_scene.instantiate()
