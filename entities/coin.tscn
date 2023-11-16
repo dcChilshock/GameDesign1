@@ -1,22 +1,22 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2u4i3e840wdv"]
 
 [ext_resource type="Script" path="res://entities/coin.gd" id="1_lbknx"]
-[ext_resource type="Texture2D" uid="uid://c4l81p7rnw2tv" path="res://entities/objects.png" id="2_icy8s"]
+[ext_resource type="Texture2D" uid="uid://c4l81p7rnw2tv" path="res://assets/objects.png" id="2_tvuq8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2q54m"]
-atlas = ExtResource("2_icy8s")
+atlas = ExtResource("2_tvuq8")
 region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ud4h3"]
-atlas = ExtResource("2_icy8s")
+atlas = ExtResource("2_tvuq8")
 region = Rect2(16, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlqjb"]
-atlas = ExtResource("2_icy8s")
+atlas = ExtResource("2_tvuq8")
 region = Rect2(32, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a1jko"]
-atlas = ExtResource("2_icy8s")
+atlas = ExtResource("2_tvuq8")
 region = Rect2(48, 64, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o7pad"]

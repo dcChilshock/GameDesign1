@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ciye1xda3ljsy"]
 
 [ext_resource type="Script" path="res://Player_hud.gd" id="1_v7xt3"]
-[ext_resource type="Texture2D" uid="uid://c4l81p7rnw2tv" path="res://entities/objects.png" id="2_isdhh"]
+[ext_resource type="Texture2D" uid="uid://c4l81p7rnw2tv" path="res://assets/objects.png" id="2_wn05s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m7167"]
 font_size = 66
@@ -18,7 +18,7 @@ offset_bottom = 128.0
 [node name="Hearts" type="Sprite2D" parent="Playerhealth"]
 position = Vector2(32, 32)
 scale = Vector2(3.25, 3.25)
-texture = ExtResource("2_isdhh")
+texture = ExtResource("2_wn05s")
 hframes = 33
 vframes = 20
 frame = 8
@@ -33,7 +33,7 @@ offset_bottom = 640.0
 [node name="coin_icon" type="Sprite2D" parent="money"]
 position = Vector2(32, 112)
 scale = Vector2(4, 4)
-texture = ExtResource("2_isdhh")
+texture = ExtResource("2_wn05s")
 hframes = 33
 vframes = 20
 frame = 132
