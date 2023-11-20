@@ -39,7 +39,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lmgo3"]
-radius = 21.0238
+radius = 13.0384
 
 [node name="mini_heart" type="Node2D"]
 

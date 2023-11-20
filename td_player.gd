@@ -5,7 +5,7 @@ const MAX_HEALTH_TOTAl = 400.00
 
 @export var data = {
 	"max_health": 60.0, #20hp per heart: 5 per fraction
-	"health": 60.0, #min 60 max 400
+	"health": 40.0, #min 60 max 400
 	"money": 0,
 	"secondaries": [],
 }
@@ -70,6 +70,7 @@ func update_animation(direction):
 			a_name = "idle_n"
 		elif look_direction.y > 0:
 			a_name = "idle_s"
+	
 
 	if $AnimatedSprite2D.animation != a_name: 
 		$AnimatedSprite2D.animation = a_name
