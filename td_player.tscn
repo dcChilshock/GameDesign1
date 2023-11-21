@@ -231,6 +231,11 @@ animations = [{
 }, {
 "frames": [],
 "loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
 "name": &"pickup_e",
 "speed": 5.0
 }, {
@@ -437,9 +442,7 @@ shape = SubResource("CapsuleShape2D_vfys3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fs1db")
-animation = &"swipe_spin"
-frame = 11
-frame_progress = 1.0
+animation = &"new_animation"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
