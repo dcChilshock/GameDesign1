@@ -6911,4 +6911,4 @@ layer_0/tile_data = PackedInt32Array(1572891, 1245184, 33, 1638427, 1245184, 33,
 position = Vector2(405, 185)
 
 [node name="change_lvl" parent="." instance=ExtResource("6_i860v")]
-position = Vector2(638, 286)
+position = Vector2(496, 282)

@@ -9,5 +9,6 @@ size = Vector2(23, 22)
 script = ExtResource("1_pfcpf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-23.5, -26)
 shape = SubResource("RectangleShape2D_dnsxf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -16,6 +16,10 @@ var inertia = Vector2()
 var look_direction = Vector2.DOWN #(0,1)
 var attack_direction = Vector2.DOWN
 var animation_lock = 0.0 
+var damage_lock = 0.0 
+var charge_time = 2.5 
+var charge_start_time = 0.0 
+
 
 var slash_scene = preload("res://entities/attacks/slash.tscn")
 var menu_scene = preload("res://my_gui.tscn")
@@ -23,43 +27,73 @@ var menu_instance = null
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
 
 func get_direction_name():
-	return["east","south","west","north"][
+	return["w","s","w","n"][
 		int(round(look_direction.angle() * 2/PI))%4
 	]
 
 func slash_attack():
 	data.state = STATES.ATTACKING
-	$AnimatedSprite2D.play("swipe_w" + get_direction_name())
+	#if get_direction_name() == "w":
+		#$AnimatedSprite2D.flip_h = 0
+	$AnimatedSprite2D.play("swipe_" + get_direction_name())
 	attack_direction = look_direction
 	var slash = slash_scene.instantiate()
 	slash.position = attack_direction * 20.0
 	slash.rotation = Vector2().angle_to_point(-attack_direction)
 	add_child(slash)
 	animation_lock = 0.2
+
+func charged_attack(): 
+	data.state = STATES.ATTACKING 
+	$AnimatedSprite2D.play("swipe_charge")
+	attack_direction = look_direction
+	damage_lock = 0.3
+	
+	for i in range(9):
+		#offset by i-4 x 45 deggres
+		var angle = -attack_direction.angle()+(i-4)*PI/4; #-4,4
+		var dir = Vector2(cos(angle), sin(angle))
+		var slash = slash_scene.instantiate() 
+		slash.position = dir * 20.0
+		slash.rotation = Vector2().angle_to_point(-dir)
+		slash.damage *= 1.5 
+		add_child(slash)
+		await get_tree().create_timer(0.03).timeout
+	
+	animation_lock = 0.2
+	data.state = STATES.IDLE 
+	await $AnimatedSprite2D.animation_finished
+	pass
+
+
 func pickup_money(value):
 	data.money += value
-
 func pickup_health(value):
 	data.health += value
 	data.health = clamp(data.health, 0, data.max_health)
-	
 func _ready():
 	p_HUD.show()
 	menu_instance = menu_scene.instantiate()
 	get_tree().get_root().add_child.call_deferred(menu_instance)
 	menu_instance.hide()
-
 func _physics_process(delta):
-	var direction = Vector2(
-		Input.get_axis("ui_left", "ui_right"),
-		Input.get_axis("ui_up", "ui_down")
-	).normalized()
-	update_animation(direction)
-	if direction.length() > 0:
-		look_direction = direction 
-		#scale to 1 to prevent speed boost from diagonals 
-		direction = direction.normalized() 
-		velocity = direction * SPEED
+	animation_lock = max(animation_lock-delta, 0.0)
+	
+	if animation_lock == 0.0 and data.state != STATES.DEAD:
+		#TODO DAMGE + CHARGING
+		if data.state != STATES.CHARGING:
+			data.state = STATES.IDLE 
+		
+		var direction = Vector2(
+			Input.get_axis("ui_left", "ui_right"),
+			Input.get_axis("ui_up", "ui_down")
+		).normalized()
+		update_animation(direction)
+		if direction.length() > 0:
+			look_direction = direction 
+			#scale to 1 to prevent speed boost from diagonals 
+			direction = direction.normalized() 
+			velocity = direction * SPEED
 	else: 
 		velocity = velocity.move_toward(Vector2(), SPEED)
 	velocity += inertia 
@@ -73,27 +107,27 @@ func _physics_process(delta):
 		menu_instance.show()
 		get_tree().paused = true
 func update_animation(direction): 
-	var a_name = "idle_s" #default
-	if direction.length() > 0:
-		look_direction = direction
-		a_name = "walk"
-		if direction.x < 0:
-			a_name = "side"
-			$AnimatedSprite2D.flip_h = look_direction.x > 0
-		elif direction.y < 0:
-			a_name += "_n"
-			$AnimatedSprite2D.play()
-		elif direction.y > 0:
-			a_name += "_s"
-			$AnimatedSprite2D.play()
-	else:
-		if look_direction.x != 0:
-			a_name = "idle_w"
-			$AnimatedSprite2D.flip_h = look_direction.x > 0
-		elif look_direction.y < 0:
-			a_name = "idle_n"
-		elif look_direction.y > 0:
-			a_name = "idle_s"
-	if $AnimatedSprite2D.animation != a_name: 
-		$AnimatedSprite2D.animation = a_name
-	
+	if data.state == STATES.IDLE:
+		var a_name = "idle_s" #default
+		if direction.length() > 0:
+			look_direction = direction
+			a_name = "walk"
+			if direction.x < 0:
+				a_name = "side"
+				$AnimatedSprite2D.flip_h = look_direction.x > 0
+			elif direction.y < 0:
+				a_name += "_n"
+				$AnimatedSprite2D.play()
+			elif direction.y > 0:
+				a_name += "_s"
+				$AnimatedSprite2D.play()
+		else:
+			if look_direction.x != 0:
+				a_name = "idle_w"
+				$AnimatedSprite2D.flip_h = look_direction.x > 0
+			elif look_direction.y < 0:
+				a_name = "idle_n"
+			elif look_direction.y > 0:
+				a_name = "idle_s"
+		if $AnimatedSprite2D.animation != a_name: 
+			$AnimatedSprite2D.animation = a_name
