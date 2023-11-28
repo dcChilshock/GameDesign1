@@ -4,6 +4,7 @@ const MAX_HEALTH_TOTAl = 400.00
 #const JUMP_VELOCITY = -400.0
 
 enum STATES {IDLE=0,DEAD,DAMAGED,ATTACKING,CHARGING,DASHING}
+
 @export var data = {
 	"max_health": 60.0, #20hp per heart: 5 per fraction
 	"health": 60.0, #min 60 max 400
@@ -51,7 +52,7 @@ func charged_attack():
 	
 	for i in range(9):
 		#offset by i-4 x 45 deggres
-		var angle = -attack_direction.angle()+(i-4)*PI/4; #-4,4
+		var angle = -attack_direction.angle() + (i-4) * PI/4; #-4,4
 		var dir = Vector2(cos(angle), sin(angle))
 		var slash = slash_scene.instantiate() 
 		slash.position = dir * 20.0
@@ -61,8 +62,8 @@ func charged_attack():
 		await get_tree().create_timer(0.03).timeout
 	
 	animation_lock = 0.2
-	data.state = STATES.IDLE 
 	await $AnimatedSprite2D.animation_finished
+	data.state = STATES.IDLE 
 	pass
 
 
@@ -103,6 +104,16 @@ func _physics_process(delta):
 	if data.state != STATES.DEAD:
 		if Input.is_action_just_pressed("ui_accept"):
 			slash_attack()
+			charge_start_time = Time.get_time_dict_from_system().second
+			data.state = STATES.CHARGING
+		
+		if Input.is_action_just_released("ui_accept"):
+			var ctime = Time.get_time_dict_from_system().second
+			var charge_duration = ctime - charge_start_time
+			if charge_duration >= charge_time and data.state == STATES.CHARGING:
+				charged_attack()
+			else:
+				data.state = STATES.IDLE
 	if Input.is_action_just_pressed("ui_cancel"):
 		menu_instance.show()
 		get_tree().paused = true
