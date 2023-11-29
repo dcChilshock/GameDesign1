@@ -442,7 +442,7 @@ shape = SubResource("CapsuleShape2D_vfys3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fs1db")
-animation = &"swipe_charge"
+animation = &"side"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
