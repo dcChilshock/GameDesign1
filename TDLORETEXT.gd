@@ -16,3 +16,5 @@ extends Node
 #end3 game continues with older player trying to go through with his plan only now even more graves. 
 #VERY HARD but player should be able to beat the game. 2 paths for end 3. 1. same as end 1 but older player. 
 #2. Dies to the swarm 
+
+#2 types of enemys will move diagonally. 

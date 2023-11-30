@@ -43,7 +43,6 @@ func slash_attack():
 	slash.rotation = Vector2().angle_to_point(-attack_direction)
 	add_child(slash)
 	animation_lock = 0.2
-
 func charged_attack(): 
 	data.state = STATES.ATTACKING 
 	$AnimatedSprite2D.play("swipe_charge")
@@ -65,8 +64,6 @@ func charged_attack():
 	await $AnimatedSprite2D.animation_finished
 	data.state = STATES.IDLE 
 	pass
-
-
 func pickup_money(value):
 	data.money += value
 func pickup_health(value):
@@ -77,6 +74,8 @@ func _ready():
 	menu_instance = menu_scene.instantiate()
 	get_tree().get_root().add_child.call_deferred(menu_instance)
 	menu_instance.hide()
+func take_damage(dmg):
+	pass
 func _physics_process(delta):
 	animation_lock = max(animation_lock-delta, 0.0)
 	
