@@ -6915,4 +6915,4 @@ position = Vector2(405, 185)
 position = Vector2(556, 212)
 
 [node name="TDenemy" parent="." instance=ExtResource("7_w1eyi")]
-position = Vector2(484, 51)
+position = Vector2(435, 77)
