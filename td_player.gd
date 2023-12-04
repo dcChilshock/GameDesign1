@@ -70,12 +70,28 @@ func pickup_health(value):
 	data.health += value
 	data.health = clamp(data.health, 0, data.max_health)
 func _ready():
+	
 	p_HUD.show()
 	menu_instance = menu_scene.instantiate()
 	get_tree().get_root().add_child.call_deferred(menu_instance)
 	menu_instance.hide()
+
+signal health_depleted
+
 func take_damage(dmg):
-	pass
+	if damage_lock == 0.0:
+		data.health -= dmg
+		data.state = STATES.DAMAGED
+		damage_lock = 0.5
+		animation_lock = dmg * 0.005
+		#make animation for taking damage aka flash red when hit animation 
+		if data.health <= 0: 
+			data.state = STATES.DEAD 
+			#death animation
+			await  get_tree().create_timer(0.5).timeout 
+			health_depleted.emit()
+		else:
+			pass
 func _physics_process(delta):
 	animation_lock = max(animation_lock-delta, 0.0)
 	

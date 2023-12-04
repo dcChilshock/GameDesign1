@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 60.0
 var MAX_HEALTH: float = 30.0
 var  HEALTH = MAX_HEALTH
 var DAMAGE = 10.0
@@ -22,7 +22,7 @@ var state_directions = [
 	Vector2.ZERO
 ]
 
-signal recovered
+
 var inertia = Vector2()
 var ai_timer_max = 0.5
 var ai_timer = ai_timer_max - randi() % 5
@@ -31,6 +31,8 @@ var animation_lock = 0.0
 var knockback = 120.0
 var vision_distance = 40.0
 var money_value = 5.0
+
+signal recovered
 
 @onready var raycastN =$RayCastN
 @onready var raycastM =$RayCastW
@@ -51,6 +53,18 @@ func turn_toward_player_location(location: Vector2):
 	AI_STATE = closest_state
 
 func take_damage(dmg, attacker=null):
+	if damage_lock == 0.0:
+		AI_STATE = STATES.DAMAGED
+		HEALTH -= dmg
+		damage_lock =0.2
+		animation_lock = 0.2
+		if HEALTH <= 0:
+			queue_free()
+		else:
+			if attacker != null:
+				var location = attacker.global_position
+				await recovered
+				turn_toward_player_location(location)
 	pass
 
 func _physics_process(delta):
@@ -63,6 +77,7 @@ func _physics_process(delta):
 			raydir.rotated(deg_to_rad(-45)).normalized() * vision_distance
 		raycastS.target_position = \
 			raydir.rotated(deg_to_rad(-45)).normalized() * vision_distance
+			
 	if animation_lock ==0.0:
 		if AI_STATE == STATES.DAMAGED:
 			AI_STATE = STATES.IDLE
@@ -83,7 +98,7 @@ func _physics_process(delta):
 		if ai_timer == 0.0:
 			if AI_STATE == STATES.IDLE: 
 				var rnd_mov = randi() % 4
-				AI_STATE == STATES.values()[rnd_mov+1]
+				AI_STATE = STATES.values()[rnd_mov+1]
 			else:
 				AI_STATE = STATES.IDLE
 			ai_timer = ai_timer_max

@@ -13,6 +13,6 @@ func _process(delta):
 	for enemy in get_tree().get_nodes_in_group("Enemy"):
 		if overlaps_body(enemy):
 			enemy.take_damage(damage, self)
-			enemy.interia = (enemy.global_position-self.global_position).normalized() * knockback
+			enemy.inertia = (enemy.global_position-self.global_position).normalized() * knockback
 			
 	pass

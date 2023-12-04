@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1es58twg6b0k"]
+[gd_scene load_steps=9 format=3 uid="uid://d1es58twg6b0k"]
 
 [ext_resource type="Texture2D" uid="uid://dpfer6oyvupo4" path="res://assets/cave (1).png" id="1_r3li2"]
 [ext_resource type="Texture2D" uid="uid://bjls7xigwb6qv" path="res://assets/cave.png" id="2_x20pg"]
 [ext_resource type="PackedScene" uid="uid://caied5om1gt4" path="res://td_player.tscn" id="3_v661f"]
 [ext_resource type="PackedScene" uid="uid://ciye1xda3ljsy" path="res://player_hud.tscn" id="4_msrub"]
+[ext_resource type="PackedScene" uid="uid://ru4iqb8r14q0" path="res://t_denemy.tscn" id="5_7im1g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ari64"]
 texture = ExtResource("1_r3li2")
@@ -429,3 +430,6 @@ layer_0/tile_data = PackedInt32Array(65537, 196608, 0, 131073, 196608, 4, 196609
 position = Vector2(40, 59)
 
 [node name="Player_hud" parent="." instance=ExtResource("4_msrub")]
+
+[node name="TDenemy" parent="." instance=ExtResource("5_7im1g")]
+position = Vector2(136, 79)

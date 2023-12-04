@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d18otxlk6yn3n"]
+
+[ext_resource type="PackedScene" uid="uid://caied5om1gt4" path="res://td_player.tscn" id="1_opwek"]
+[ext_resource type="PackedScene" uid="uid://ciye1xda3ljsy" path="res://player_hud.tscn" id="2_mndnw"]
+
+[node name="Arena" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="td_player" parent="." instance=ExtResource("1_opwek")]
+
+[node name="Player_hud" parent="." instance=ExtResource("2_mndnw")]
