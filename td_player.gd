@@ -26,7 +26,7 @@ var slash_scene = preload("res://entities/attacks/slash.tscn")
 var menu_scene = preload("res://my_gui.tscn")
 var menu_instance = null
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
-
+@onready var aud_player = $Aud
 func get_direction_name():
 	return["w","s","w","n"][
 		int(round(look_direction.angle() * 2/PI))%4
