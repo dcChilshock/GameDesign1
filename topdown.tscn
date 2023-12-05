@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvbuibg1vjjd0"]
+[gd_scene load_steps=14 format=3 uid="uid://cvbuibg1vjjd0"]
 
 [ext_resource type="PackedScene" uid="uid://caied5om1gt4" path="res://td_player.tscn" id="1_5gkb8"]
 [ext_resource type="Texture2D" uid="uid://bjls7xigwb6qv" path="res://assets/cave.png" id="3_ksfjm"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d3jbbnmgy2bdl" path="res://entities/mini_heart.tscn" id="6_hlw4w"]
 [ext_resource type="PackedScene" uid="uid://ccwvav8hcclqk" path="res://change_lvl.tscn" id="6_i860v"]
 [ext_resource type="PackedScene" uid="uid://ru4iqb8r14q0" path="res://t_denemy.tscn" id="7_w1eyi"]
+[ext_resource type="AudioStream" uid="uid://iwmfkf0q2v63" path="res://sounds/overworld.mp3" id="8_hwy84"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vbf3o"]
 texture = ExtResource("3_vurc7")
@@ -6916,3 +6917,6 @@ position = Vector2(556, 212)
 
 [node name="TDenemy" parent="." instance=ExtResource("7_w1eyi")]
 position = Vector2(435, 77)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_hwy84")

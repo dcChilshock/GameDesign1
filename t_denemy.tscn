@@ -191,13 +191,13 @@ shape = SubResource("RectangleShape2D_lxa0e")
 debug_color = Color(0.878431, 0.282353, 0.494118, 0.419608)
 
 [node name="RayCastN" type="RayCast2D" parent="."]
-target_position = Vector2(-72, -24)
+target_position = Vector2(-104, -48)
 
 [node name="RayCastW" type="RayCast2D" parent="."]
-target_position = Vector2(-72, 0)
+target_position = Vector2(-104, 0)
 
 [node name="RayCastS" type="RayCast2D" parent="."]
-target_position = Vector2(-72, 24)
+target_position = Vector2(-104, 48)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xeb7b")
