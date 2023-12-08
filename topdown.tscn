@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvbuibg1vjjd0"]
+[gd_scene load_steps=15 format=3 uid="uid://cvbuibg1vjjd0"]
 
 [ext_resource type="PackedScene" uid="uid://caied5om1gt4" path="res://td_player.tscn" id="1_5gkb8"]
 [ext_resource type="Texture2D" uid="uid://bjls7xigwb6qv" path="res://assets/cave.png" id="3_ksfjm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ccwvav8hcclqk" path="res://change_lvl.tscn" id="6_i860v"]
 [ext_resource type="PackedScene" uid="uid://ru4iqb8r14q0" path="res://t_denemy.tscn" id="7_w1eyi"]
 [ext_resource type="AudioStream" uid="uid://iwmfkf0q2v63" path="res://sounds/overworld.mp3" id="8_hwy84"]
+[ext_resource type="PackedScene" uid="uid://yd7gq2jxthvm" path="res://entities/Object/Small_chest.tscn" id="9_d25bt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vbf3o"]
 texture = ExtResource("3_vurc7")
@@ -6920,3 +6921,9 @@ position = Vector2(435, 77)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_hwy84")
+
+[node name="Small_chest" parent="." instance=ExtResource("9_d25bt")]
+position = Vector2(483, 139)
+contents = {
+"coin": 1
+}
