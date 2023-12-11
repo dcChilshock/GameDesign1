@@ -43,6 +43,8 @@ func drop_item(item_name, value, player):
 	item.global_position = self.global_position
 	get_tree().current_scene.add_child(item)
 	bounce_towards_player(item, player)
+
+
 func _ready():
 	regex.compile("[0-9]")
 	pass # Replace with function body.
